@@ -5,17 +5,17 @@ export PATH=$PATH:$PWD/tools
 
 # go to https://github.com/keep-network/keep-core/releases
 # and search for the release you want to build & ajust branch accordingly
-# for example for release 'v.1.2.3-rc (Ropsten)' branch name will be 'v.1.2.3-rc'
-export BRANCH=v1.2.0-rc.1
+# for example for release 'v1.0.0' branch name will be 'v1.0.0'
+export BRANCH=v1.0.0
 SCRIPTS_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 ; pwd -P )"
 echo "SCRIPTS_DIR: $SCRIPTS_DIR"
 
-# build random beacon node
+# build ecdsa node
 
 # cd $BUILD_FOLDER
 
-git clone https://github.com/keep-network/keep-core.git
-cd keep-core
+git clone https://github.com/keep-network/keep-ecdsa.git
+cd keep-ecdsa
 git checkout $BRANCH
 
 cd solidity
@@ -23,8 +23,8 @@ npm update
 cd ..
 go generate ./.../
 
-export KEEP_CLIENT_DIR=$PWD
-$SCRIPTS_DIR/configure_keep.sh
-unset KEEP_CLIENT_DIR
+#export KEEP_CLIENT_DIR=$PWD
+#$SCRIPTS_DIR/configure_keep.sh
+#unset KEEP_CLIENT_DIR
 
 go run main.go
