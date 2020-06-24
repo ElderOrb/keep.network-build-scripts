@@ -1,0 +1,1 @@
+sudo docker logs keep-client --since 10m -f
