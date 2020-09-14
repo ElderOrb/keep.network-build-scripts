@@ -23,5 +23,5 @@ sudo docker run -dit \
 --log-opt max-size=100m \
 --log-opt max-file=3 \
 --name keep-client \
--p 3919:3919 \
+-p 3919:3919 -p 8080:8080 -p 8081:8081 \
 $KEEP_CLIENT_DOCKER_IMAGE --config /mnt/config/config.toml start

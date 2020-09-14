@@ -23,7 +23,7 @@ docker run -d \
 --env LOG_LEVEL=debug \
 --log-opt max-size=100m \
 --log-opt max-file=3 \
--p 3920:3920 \
+-p 3920:3920 -p 8082:8082 -p 8083:8083 \
 $KEEP_ECDSA_DOCKER_IMAGE --config /mnt/keep-ecdsa/config/config.toml start
 
 docker container ls --all

@@ -25,5 +25,5 @@ sudo docker run -dit \
 --log-driver loki \
 --log-opt loki-url="http://136.244.109.187:3100/loki/api/v1/push" \
 --name keep-client \
--p 3919:3919 \
+-p 3919:3919 -p 8080:8080 -p 8081:8081 \
 $KEEP_CLIENT_DOCKER_IMAGE --config /mnt/config/config.toml start
